@@ -1,1 +1,63 @@
-!function(n){n.fn.infinite=function(o){var t={container:".js-infinite-loop"},e=n.extend({},t,o);n.fn.infinite._o=e,startLoop=function(){n(window).on("scroll",i.scroll),n.fn.infinite.clone()},n.fn.infinite.clone=function(){var i=n(e.container).clone();n(e.container).parent().prepend(i).append(i),setTimeout(function(){n.fn.infinite.startPosition()},200)},n.fn.infinite.startPosition=function(){var i=n(e.container+":nth-child(2)").offset().top;n(window).scrollTop(i)},n.fn.infinite.destroy=function(){n(window).off("scroll"),n(window).off("mousewheel")},n.fn.infinite.debug=function(){console.log(t,o)},startLoop()};var i={scroll:function(){var i=n(n.fn.infinite._o.container+":last-child "),o=n(window).height(),t=n(window).width(),e=n(window).scrollTop(),f=(i.offset().top,n(n.fn.infinite._o.container).parent().outerHeight(!0));if(o+e>=f){var r=i.outerHeight(!0)-o+.03*t;n(window).scrollTop(r)}else if(e<=0){var c=n(n.fn.infinite._o.container).last().offset().top;n(window).scrollTop(c)}}};module.exports=n.fn.infinite}(jQuery);
+(function ( $ ) {
+    var _ = {
+        lastScrollTop : 0,
+        direction: null,
+    };
+    $.fn.infinite = function(options) {
+        var defaults = {
+            container : '.js-infinite-loop',
+        };
+
+        var o = $.extend( {}, defaults, options );
+        $.fn.infinite._o = o;
+        startLoop = function(){
+            $(window).on('scroll',  handler.scroll);
+            $.fn.infinite.clone();
+        };
+        $.fn.infinite.clone = function(){
+            var loop_clone = $(o.container).clone();
+            $(o.container).parent().prepend( loop_clone ).append( loop_clone );
+            setTimeout(function(){
+                $.fn.infinite.startPosition();
+            }, 200);
+        };
+        $.fn.infinite.startPosition = function(){
+            var center = $(o.container+':nth-child(2)').offset().top;
+            $(window).scrollTop(center); 
+        };
+
+
+
+        $.fn.infinite.destroy = function(){
+            $(window).off('scroll');
+            $(window).off('mousewheel');
+        }
+        $.fn.infinite.debug = function(){
+            console.log(defaults , options);
+        };
+
+        startLoop();
+    };
+
+    var handler = {
+        scroll : function(){
+            var down_clone    = $($.fn.infinite._o.container+':last-child '),
+                win_height    = $(window).height(),
+                win_width     = $(window).width(),
+                winPos        = $(window).scrollTop(),
+                clone_top     = down_clone.offset().top,
+                loop_height   = $($.fn.infinite._o.container).parent().outerHeight(true);
+
+
+                        if(win_height + winPos >= loop_height ){
+                var scroll_down_loop =  down_clone.outerHeight(true) - win_height + (win_width * .03); 
+                $(window).scrollTop(scroll_down_loop); 
+            }else if(winPos <= 0 ){
+                var scroll_up_loop =  $($.fn.infinite._o.container).last().offset().top ; 
+                $(window).scrollTop(scroll_up_loop); 
+            }
+
+        }
+    };
+    module.exports = $.fn.infinite;
+}(jQuery));

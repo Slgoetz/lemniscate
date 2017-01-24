@@ -2,13 +2,16 @@ var gulp          = require('gulp'),
     browserSync   = require('browser-sync'),
     less          = require('gulp-less'),
     prefix        = require('gulp-autoprefixer'),
+    uglify        = require('gulp-uglify'),
     gutil         = require('gulp-util'),
     plumber       = require('gulp-plumber'),
     filter        = require('gulp-filter'),
+    rename        = require('gulp-rename'),
     notify        = require('gulp-notify'),
     sourcemaps    = require('gulp-sourcemaps'),
     config        = require('./config.js'),
     webpack       = require('webpack-stream'),
+    strip         = require('gulp-strip-comments'),
     webpackConfig = require('./webpack.config.js'),
     fileinclude   = require('gulp-file-include');
 
@@ -64,6 +67,25 @@ gulp.task("webpack", function() {
         .pipe(gulp.dest(config.dest.js))
         .pipe(gulp.dest('_site/'+config.dest.js))
     .pipe(browserSync.reload({stream:true}));
+});
+
+gulp.task("build_infinite", function() {
+    gulp.src('./assets/scripts/infinite.js')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(strip())
+        .pipe(plumber.stop())
+        .pipe(gulp.dest('./dist'));
+
+    gulp.src('./assets/scripts/infinite.js')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(plumber.stop())
+        .pipe(gulp.dest('./dist'));
 });
 
 
@@ -136,6 +158,6 @@ gulp.task('watch', [ 'images', 'fonts', 'less', 'html', 'webpack'],function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('serve', ['browser-sync', 'watch', ]);
-gulp.task('build', [ 'images', 'fonts', 'less', 'html', 'webpack']);
+gulp.task('build', [ 'images', 'fonts', 'less', 'html', 'webpack', 'build_infinite']);
 
 
