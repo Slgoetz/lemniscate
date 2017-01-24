@@ -2,9 +2,32 @@
 <html class="no-js" lang="">
 
 
-  @@include('./include/head.html')
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Infinite.js</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="./public/css/main.css">
+
+</head>
+
   <body data-state='' >
-    @@include('./include/dev-grid.html')
+    <div class="gridMe hidden">
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</div>
     <div id='universe'>
 
       <div class="infinite-loop">
@@ -20,16 +43,92 @@
             </div>
           </div>
         </div>
-          @@for (var i = 1; i < 21; i++) {
-          <div class="block" style="background-image: url(./public/images/`+[i]+`.jpg)">
-            <span>block `+[i]+`</span>
+          
+          <div class="block" style="background-image: url(./public/images/1.jpg)">
+            <span>block 1</span>
           </div>
-          }
+          
+          <div class="block" style="background-image: url(./public/images/2.jpg)">
+            <span>block 2</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/3.jpg)">
+            <span>block 3</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/4.jpg)">
+            <span>block 4</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/5.jpg)">
+            <span>block 5</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/6.jpg)">
+            <span>block 6</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/7.jpg)">
+            <span>block 7</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/8.jpg)">
+            <span>block 8</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/9.jpg)">
+            <span>block 9</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/10.jpg)">
+            <span>block 10</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/11.jpg)">
+            <span>block 11</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/12.jpg)">
+            <span>block 12</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/13.jpg)">
+            <span>block 13</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/14.jpg)">
+            <span>block 14</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/15.jpg)">
+            <span>block 15</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/16.jpg)">
+            <span>block 16</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/17.jpg)">
+            <span>block 17</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/18.jpg)">
+            <span>block 18</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/19.jpg)">
+            <span>block 19</span>
+          </div>
+          
+          <div class="block" style="background-image: url(./public/images/20.jpg)">
+            <span>block 20</span>
+          </div>
+          
         </div>    
       </div>
 
     </div>
-    @@include('./include/footer.html')
+    <script src="./public/js/app.js"></script>
   </body>
 
 </html>
