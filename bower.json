@@ -1,0 +1,24 @@
+{
+  "name": "Infinite.js",
+  "description": "",
+  "main": "package.json",
+  "authors": [
+    "Simon Goetz"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "myclean"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11.2"
+  }
+}

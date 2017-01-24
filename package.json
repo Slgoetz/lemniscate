@@ -1,0 +1,32 @@
+{
+  "name": "Infinite.js",
+  "version": "1.0.0",
+  "description": "Infinite JS",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-less": "^1.3.1",
+    "browser-sync": "^2.18.1",
+    "gulp-filter": "^4.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "~1.1.0",
+    "gulp-util": "~3.0.7",
+    "gulp-sourcemaps": "~1.9.1",
+    "webpack-stream": "~3.2.0",
+    "gulp-file-include": "1.0.0",
+    "gulp-autoprefixer": "1.0.0"
+  },
+  "author": "Simon Goetz",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

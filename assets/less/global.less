@@ -1,0 +1,75 @@
+body{
+	// font-family: @brown;
+	font-weight: normal;
+	-webmit-text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-family: 'Open Sans', sans-serif;
+
+	&.noScroll{
+		height: 100vh;
+		overflow-y: hidden;
+	}	
+}
+
+
+.vertical-spacing{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.vertical-spacing-top{
+	margin-top: 40px;
+}
+.vertical-spacing-bottom{
+	margin-top: 40px;
+}
+// -----------------------------------------
+//    Typography
+// -----------------------------------------
+p{
+	font-size: @p-FS;
+	color: @copy;
+	line-height: @p-LH;
+	&.sub-header{
+		color: @lt-copy;
+	}
+}
+
+h2{
+	font-size: @h2-FS;
+	color: @copy;
+	line-height: @h2-LH;
+}
+h5{
+	// font-family: OpenSans-Semibold;
+	font-size: @h5-FS;
+	color: @copy;
+	font-weight: bold;
+	line-height: 1.5;
+	margin: 0px auto 10px;
+}
+
+
+
+
+
+// -----------------------------------------
+//    Butons
+// -----------------------------------------
+.infinite-loop-content{
+	.flex(flex, row, flex-start, space-between);
+	-webkit-flex-wrap:wrap;
+	flex-wrap:wrap;
+	.width(10,9);
+	.center;
+}
+.block{
+	.flex(flex, column, center, center);
+	width: 48%;
+	height: 400px;
+	margin-bottom: 3vw;
+	background-color: @grey;
+}

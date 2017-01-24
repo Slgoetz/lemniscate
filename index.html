@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+
+  @@include('./include/head.html')
+  <body data-state='' >
+    @@include('./include/dev-grid.html')
+    <div id='universe'>
+
+      <div class="infinite-loop">
+        <div class="infinite-loop-content js-infinite-loop">
+
+          @@for (var i = 1; i < 21; i++) {
+          <div class="block">
+            block `+[i]+`
+          </div>
+          }
+        </div>    
+      </div>
+
+    </div>
+    @@include('./include/footer.html')
+  </body>
+
+</html>
