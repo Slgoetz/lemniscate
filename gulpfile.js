@@ -11,7 +11,9 @@ var gulp          = require('gulp'),
     sourcemaps    = require('gulp-sourcemaps'),
     config        = require('./config.js'),
     webpack       = require('webpack-stream'),
+    imagemin      = require('gulp-imagemin'),
     shell         = require('gulp-shell'),
+    imageResize   = require('gulp-image-resize'),
     strip         = require('gulp-strip-comments'),
     webpackConfig = require('./webpack.config.js'),
     fileinclude   = require('gulp-file-include');
@@ -105,9 +107,15 @@ gulp.task('fonts', function () {
 Compress all images in the assets/images folder and place in  _sites/public/images (set in config file)
  */
 gulp.task('images',function(){
-  return gulp.src(config.path.images)
-    .pipe(gulp.dest('_site/'+config.dest.images))
-    .pipe(browserSync.reload({stream:true}));
+    return gulp.src(config.path.images)
+        .pipe(filter('**/*.{png,jpg}'))
+        .pipe(imageResize({
+              width : 500,
+              crop : false
+            }))
+        .pipe(imagemin())
+        .pipe(gulp.dest('_site/'+config.dest.images))
+        .pipe(browserSync.reload({stream:true}));
 });
 
 

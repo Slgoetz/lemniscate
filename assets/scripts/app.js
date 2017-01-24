@@ -1,5 +1,5 @@
 // Require all js files needed 
-var infinite = require('./infinite.js');
+var infinite = require('./lemniscate.js');
 
 
 /* ========================================================================
@@ -23,7 +23,7 @@ var myclean = {
       init: function() {
          console.log('init-state: Common');
          this.dev();
-         $('.js-infinite-loop').infinite();
+         $('.js-lemniscate-loop').lemniscate();
       },
       dev:function(){
          console.log('dev mode');

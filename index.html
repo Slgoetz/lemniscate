@@ -8,11 +8,21 @@
     <div id='universe'>
 
       <div class="infinite-loop">
-        <div class="infinite-loop-content js-infinite-loop">
-
+        <div class="infinite-loop-content js-lemniscate-loop">
+        <div class="full-screen">
+          <div class="txt">
+            <h1>Lemniscate.js</h1>
+            <div class="meta">
+              <a class="btn" href="https://github.com/Slgoetz/lemniscate" title="Get Lemniscate" target="_blank"><img src="./public/images/git.png">Get Lemniscate</a>
+            </div>
+            <div class="scroll">
+             <img src="./public/images/scroll.png"> <span>Scroll</span>
+            </div>
+          </div>
+        </div>
           @@for (var i = 1; i < 21; i++) {
-          <div class="block">
-            block `+[i]+`
+          <div class="block" style="background-image: url(./public/images/`+[i]+`.jpg)">
+            <span>block `+[i]+`</span>
           </div>
           }
         </div>    
