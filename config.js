@@ -6,7 +6,7 @@ var dist    = './';
 
 module.exports = {
   dest: {
-    js        : dist+'public/js',
+    js        : dist+'dist/js',
     images    : dist+'public/images',
     css       : dist+'public/css',
     fonts     : dist+'public/fonts'

@@ -62,7 +62,7 @@ gulp.task("webpack", function() {
         .pipe(webpack( webpackConfig ))
         .pipe(plumber.stop())
         .pipe(gulp.dest(config.dest.js))
-         .pipe(gulp.dest('_site/'+config.dest.js))
+        .pipe(gulp.dest('_site/'+config.dest.js))
     .pipe(browserSync.reload({stream:true}));
 });
 
