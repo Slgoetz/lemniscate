@@ -136,6 +136,6 @@ gulp.task('watch', [ 'images', 'fonts', 'less', 'html', 'webpack'],function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('serve', ['browser-sync', 'watch', ]);
-
+gulp.task('build', [ 'images', 'fonts', 'less', 'html', 'webpack']);
 
 
