@@ -11,6 +11,7 @@ var gulp          = require('gulp'),
     sourcemaps    = require('gulp-sourcemaps'),
     config        = require('./config.js'),
     webpack       = require('webpack-stream'),
+    shell         = require('gulp-shell'),
     strip         = require('gulp-strip-comments'),
     webpackConfig = require('./webpack.config.js'),
     fileinclude   = require('gulp-file-include');
@@ -159,5 +160,9 @@ gulp.task('watch', [ 'images', 'fonts', 'less', 'html', 'webpack'],function () {
  */
 gulp.task('serve', ['browser-sync', 'watch', ]);
 gulp.task('build', [ 'images', 'fonts', 'less', 'html', 'webpack', 'build_infinite']);
+
+gulp.task('deploy', [ 'build'], shell.task([
+  'git subtree push --prefix _site origin gh-pages',
+]));
 
 

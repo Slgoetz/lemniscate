@@ -25,7 +25,7 @@ module.exports = {
   },
 
   browsersync: {
-    proxy: 'dwise.dev',
+    proxy: ' infinite.dev',
     baseDir: '_site',
     // logConnections: true,
     // port: '80',
