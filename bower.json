@@ -1,18 +1,22 @@
 {
-  "name": "Infinite.js",
-  "description": "",
-  "main": "package.json",
+  "name": "Lemniscate.js",
+  "version": "1.0.0",
+  "description": "Infinite looping page. ",
+  "main": "/dist/lemniscate.min.js",
   "authors": [
     "Simon Goetz"
   ],
   "license": "ISC",
   "keywords": [
-    "myclean"
+    "infinite",
+    "looping",
+    "scrolling"
   ],
-  "homepage": "",
+  "homepage": "https://slgoetz.github.io/lemniscate/",
   "private": true,
   "ignore": [
     "**/.*",
+    "_site",
     "node_modules",
     "bower_components",
     "test",

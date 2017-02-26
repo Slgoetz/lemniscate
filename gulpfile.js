@@ -72,8 +72,8 @@ gulp.task("webpack", function() {
     .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task("build_infinite", function() {
-    gulp.src('./assets/scripts/infinite.js')
+gulp.task("build_lemniscate", function() {
+    gulp.src('./assets/scripts/lemniscate.js')
         .pipe(plumber({
             errorHandler: onError
         }))
@@ -81,7 +81,7 @@ gulp.task("build_infinite", function() {
         .pipe(plumber.stop())
         .pipe(gulp.dest('./dist'));
 
-    gulp.src('./assets/scripts/infinite.js')
+    gulp.src('./assets/scripts/lemniscate.js')
         .pipe(plumber({
             errorHandler: onError
         }))
@@ -167,7 +167,7 @@ gulp.task('watch', [ 'images', 'fonts', 'less', 'html', 'webpack'],function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('serve', ['browser-sync', 'watch', ]);
-gulp.task('build', [ 'images', 'fonts', 'less', 'html', 'webpack', 'build_infinite']);
+gulp.task('build', [ 'images', 'fonts', 'less', 'html', 'webpack', 'build_lemniscate']);
 
 gulp.task('deploy', [ 'build'], shell.task([
   'git subtree push --prefix _site origin gh-pages',
