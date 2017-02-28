@@ -23,7 +23,7 @@ var myclean = {
       init: function() {
          console.log('init-state: Common');
          this.dev();
-         $('.js-lemniscate-loop').lemniscate();
+         $('#page').lemniscate();
       },
       dev:function(){
          console.log('dev mode');
