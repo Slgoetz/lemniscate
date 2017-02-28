@@ -4,8 +4,9 @@
         direction: null,
     };
     $.fn.lemniscate = function(options) {
+        console.log('----------', this.selector);
         var defaults = {
-            container : '.js-lemniscate-loop',
+            container : this.selector,
         };
 
         var o = $.extend( {}, defaults, options );
