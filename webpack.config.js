@@ -53,7 +53,7 @@ module.exports = {
                     options: {
                         sourceMap: true,
                         sassOptions: {
-                            outputStyle: devMode ? 'expanded' : 'compressed',
+                            outputStyle:'expanded',
                         },
                     },
                 },
