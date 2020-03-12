@@ -1,8 +1,8 @@
 {
-  "name": "Lemniscate.js",
+  "name": "lemniscate-js",
   "version": "1.1.0",
   "description": "Lemniscate allows you to infinitely scroll your page in both directions",
-  "main": "app.js",
+  "main": "lemniscate.js",
   "scripts": {
     "build": "webpack --config webpackprod.config.js",
     "watch": "webpack --watch --config webpack.config.js"
