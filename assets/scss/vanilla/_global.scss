@@ -6,7 +6,11 @@ body{
 	text-rendering: optimizeLegibility;
 }
 
-
+div,
+section,
+p{
+	box-sizing: border-box;
+}
 
 //===============================================================/
 //  Global Font Settings
@@ -16,23 +20,23 @@ h1,h2,h3,h4,h5,h6,p{
 	font-weight: normal;
 }
 h1{
-	font-size: @h1_FS;
+	font-size: $h1_FS;
 	margin: 0px auto 10px;
 }
 h2{
-	font-size: @h2_FS;
+	font-size: $h2_FS;
 }
 h3{
-	font-size: @h3_FS;
+	font-size: $h3_FS;
 }
 h4{
-	font-size: @h4_FS;
+	font-size: $h4_FS;
 }
 h5{
-	font-size: @h5_FS;
+	font-size: $h5_FS;
 }
 h6{
-	font-size: @h6_FS;
+	font-size: $h6_FS;
 }
 
 p{
@@ -53,8 +57,6 @@ a{
 	text-decoration: none;
 }
 
-
-
 //===============================================================/
 //  buttons
 //===============================================================/
@@ -65,7 +67,7 @@ a{
 // 	background-color: fade(white, 10%);
 // 	border:1px solid white;
 // 	text-decoration: none;
-// 	font-size: @btn_FS;
+// 	font-size: $btn_FS;
 // 	color: white;
 // 	margin: 10px 10px;
 // 	.transition();

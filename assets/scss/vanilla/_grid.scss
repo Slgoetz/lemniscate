@@ -1,0 +1,41 @@
+//===============================================================/
+//  Column Class Constructor
+//===============================================================/
+
+
+
+
+@for $count from 1 through $columnCount{
+    $base: '[col="';
+    $end: '"]';
+    #{$base}#{$count}#{$end} {
+        width: ($column*$count) + ($gutter * ($count - 1));
+        float: left;
+    }
+}
+
+// TABLET
+@media  #{$tablet} {
+    @for $count from 1 through $columnCount{
+        $base: '[col-';
+        $size: 't="';
+        $end: '"]';
+        #{$base}#{$size}#{$count}#{$end} {
+            width: ($column*$count) + ($gutter * ($count - 1));
+            float: left;
+        }
+    }
+}
+
+// Phone
+@media  #{$phone} {
+    @for $count from 1 through $columnCount{
+        $base: '[col-';
+        $size: 'p="';
+        $end: '"]';
+        #{$base}#{$size}#{$count}#{$end} {
+            width: ($column*$count) + ($gutter * ($count - 1));
+            float: left;
+        }
+    }
+}
