@@ -28,23 +28,23 @@ body{
 //    Typography
 // -----------------------------------------
 p{
-	font-size: @p-FS;
-	color: @copy;
-	line-height: @p-LH;
+	font-size: $p-FS;
+	color: $copy;
+	line-height: $p-LH;
 	&.sub-header{
-		color: @lt-copy;
+		color: $lt-copy;
 	}
 }
 
 h2{
-	font-size: @h2-FS;
-	color: @copy;
-	line-height: @h2-LH;
+	font-size: $h2-FS;
+	color: $copy;
+	line-height: $h2-LH;
 }
 h5{
 	// font-family: OpenSans-Semibold;
-	font-size: @h5-FS;
-	color: @copy;
+	font-size: $h5-FS;
+	color: $copy;
 	font-weight: bold;
 	line-height: 1.5;
 	margin: 0px auto 10px;
@@ -58,22 +58,24 @@ h5{
 //    Butons
 // -----------------------------------------
 .infinite-loop-content{
-	.flex(flex, row, flex-start, space-between);
+	@include flex(flex, row, flex-start, space-between);
 	-webkit-flex-wrap:wrap;
 	flex-wrap:wrap;
-	.width(10,9);
-	.center;
+	@include width(10,9);
+	float: none ;
+	margin-left: auto ;
+	margin-right: auto ;
 }
 
 .btn{
 	padding: 15px 35px;
-	.border-radius(50px);
-	border:1px solid @copy;
-	color: @copy;
+	@include border-radius(50px);
+	border:1px solid $copy;
+	color: $copy;
 	margin-top: 3vh;
 	display: inline-block;
 	text-align: center;
-	.transition();
+	@include transition();
 	img{
 		vertical-align: sub;
 		max-height: 20px;
@@ -87,7 +89,7 @@ h5{
 .full-screen{
 	width: 100vw;
 	height: 100vh;
-	.flex(flex, column, center, center);
+	@include flex(flex, column, center, center);
 	text-align: center;
 	position: relative;
 	.scroll{
@@ -95,7 +97,7 @@ h5{
 		bottom: 3vw;
 		height: 35px;
 		left: 50%;
-		.transform(translateX(-50%));
+		@include transform(translateX(-50%));
 
 		img{
 			max-height: 35px;
@@ -104,13 +106,13 @@ h5{
 	}
 }
 .block{
-	.flex(flex, column, center, center);
+	@include flex(flex, column, center, center);
 	width: 48%;
-	height: calc(~'38.2368vw * .5625 ');
+	height: calc(38.2368vw * .5625 );
 	margin-bottom: 3vw;
-	background-color: @grey;
+	background-color: $grey;
 	color: white;
-	.full-bk();
+	@include full-bk();
 	font-size: 20px;
 	position: relative;
 	span{
@@ -124,7 +126,7 @@ h5{
 		width: 100%;
 		position: absolute;
 		z-index: 0;
-		background-color: fade(@copy, 30%);
+		background-color: fade($copy, 30%);
 		background-blend-mode: multiply;
 		mix-blend-mode: multiply;
 	}
