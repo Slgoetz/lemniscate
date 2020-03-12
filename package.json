@@ -1,6 +1,6 @@
 {
   "name": "lemniscate-js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Lemniscate allows you to infinitely scroll your page in both directions",
   "main": "lemniscate.js",
   "scripts": {
