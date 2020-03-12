@@ -14,7 +14,7 @@ module.exports = {
     ],
     output: {
         path: finalPath,
-        filename: "[name].js",
+        filename: "app.js",
         chunkFilename: `[name].min.js`,
     },
     resolve: {
@@ -48,6 +48,7 @@ module.exports = {
                     }
                 },
                 'css-loader',
+                "postcss-loader",
                 {
                     loader: 'sass-loader',
                     options: {
@@ -56,10 +57,7 @@ module.exports = {
                             outputStyle:'expanded',
                         },
                     },
-                },
-                "postcss-loader"
-            
-                ]
+                }]
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/,
